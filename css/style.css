@@ -1,34 +1,57 @@
 @font-face {
-  font-family: OpenSans-Bold;
-  src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Bold.woff);
+  font-family: OpenSans-Bold, Arial, sans-serif;
+  src: url(../fonts/OpenSans-Bold.ttf);
+  src: url(../fonts/OpenSans-Bold.woff);
+  src: url(../fonts/OpenSans-Bold.woff2);
   font-weight: 700;
 }
 
 @font-face {
-  font-family: OpenSans-Regular;
-  src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Regular.woff);
+  font-family: OpenSans-Regular, Arial, sans-serif;
+  src: url(../fonts/OpenSans-Regular.ttf);
+  src: url(../fonts/OpenSans-Regular.woff);
+  src: url(../fonts/OpenSans-Regular.woff2);
   font-weight: 400;
 }
 
-body,
+/*body,
 h1,
 h2,
 h3,
 p {
   margin: 0;
   padding: 0;
-}
+}*/
 
 * {
     box-sizing: border-box;
 }
 
 .banner {
-  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg");
+  /*background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg");*/
   background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
   position: relative;
   min-height: 450px;
+}
+
+@media (min-width: 1200px) {
+  .banner {
+    background-image: url(../images/banner-bg.jpg);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1199px) {
+  .banner {
+    background-image: url(../images/banner-bg-tablet.jpg);
+  }
+}
+
+@media (max-width: 640px) {
+  .banner {
+    background-image: url(../images/banner-mobile.jpg);
+  }
 }
 
 .banner:after {
@@ -139,6 +162,15 @@ p {
 
 .trend_items {
   display: flex;
+}
+
+@media (min-width: 480px) and (max-width: 640px) {
+  .trend_items:nth-child(3n + 3) {
+    width: 100%;
+  }
+  .trend_items {
+    width: 50%;
+  }
 }
 
 .trend_item_1 {
@@ -384,6 +416,13 @@ p {
   display: flex;
 }
 
+/*.sidebar_block {
+  display: flex;
+  flex-direction: column;
+  width: 272px;
+  margin-top: 0;
+}*/
+
 .sidebar_block:nth-child(n+2) {
   margin-top: 60px;
 }
@@ -455,13 +494,14 @@ p {
 .wrapper_meta {
   display: flex;
   flex-wrap: wrap;
+  font-weight: bold;
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
 .meta_item {
-  margin-right: 6px;
+  margin-right: 4px;
   margin-bottom: 6px;
 }
 
